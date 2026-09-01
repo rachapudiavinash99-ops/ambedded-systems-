@@ -1,0 +1,7 @@
+[[package]]
+name = "fastapi"
+version = "0.100.0"
+description = "FastAPI framework"
+category = "main"
+optional = False
+python-versions = ">=3.7"
