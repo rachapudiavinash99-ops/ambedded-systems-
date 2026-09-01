@@ -21,8 +21,8 @@
         <!-- Sidebar -->
         <div class="col-md-2 sidebar position-fixed">
             <h4 class="text-center mb-4 text-white mt-3">SmartDevice Lab</h4>
-            <a href="/" class="active">📊 Dashboard</a>
-            <a href="/devices" class="">📱 Devices</a>
+            <a href="/" class="">📊 Dashboard</a>
+            <a href="/devices" class="active">📱 Devices</a>
             <a href="/hardware" class="">🔬 Hardware Monitor</a>
             <a href="/tests" class="">🧪 Tests & Tasks</a>
             <a href="/alerts" class="">⚠️ Alerts</a>
@@ -30,18 +30,17 @@
         </div>
 
         <div class="col-md-10 main-content">
-            <h2>Dashboard</h2>
-            <p class="text-muted">Welcome to the central command center.</p>
-            <div class="card p-4 mt-4">
-                <h5>Resource Utilization Overview</h5>
-                <canvas id="telemetryChart" height="80"></canvas>
-            </div>
+            <h2>Manage Devices</h2>
+            <p class="text-muted">Manage your virtual embedded smartphone testing fleet.</p>
+            <button class="btn btn-primary mb-3 mt-2">+ Add New Device</button>
+            <table class="table table-striped bg-white rounded shadow-sm">
+                <thead><tr><th>ID</th><th>Model</th><th>Status</th><th>Action</th></tr></thead>
+                <tbody>
+                    <tr><td>DEV-001</td><td>Virtual Pixel 7</td><td><span class="badge bg-success">Online</span></td><td><button class="btn btn-sm btn-outline-danger">Stop</button></td></tr>
+                    <tr><td>DEV-002</td><td>Virtual Galaxy S23</td><td><span class="badge bg-secondary">Offline</span></td><td><button class="btn btn-sm btn-outline-success">Start</button></td></tr>
+                </tbody>
+            </table>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script>
-            const ctx = document.getElementById('telemetryChart').getContext('2d');
-            new Chart(ctx, { type: 'bar', data: { labels: ['CPU', 'RAM', 'Storage'], datasets: [{ label: 'Usage %', data: [45, 80, 60], backgroundColor: ['#0d6efd', '#dc3545', '#ffc107'] }] } });
-        </script>
     
     </div>
 </div>

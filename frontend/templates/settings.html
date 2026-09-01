@@ -21,27 +21,33 @@
         <!-- Sidebar -->
         <div class="col-md-2 sidebar position-fixed">
             <h4 class="text-center mb-4 text-white mt-3">SmartDevice Lab</h4>
-            <a href="/" class="active">📊 Dashboard</a>
+            <a href="/" class="">📊 Dashboard</a>
             <a href="/devices" class="">📱 Devices</a>
             <a href="/hardware" class="">🔬 Hardware Monitor</a>
             <a href="/tests" class="">🧪 Tests & Tasks</a>
             <a href="/alerts" class="">⚠️ Alerts</a>
-            <a href="/settings" class="">⚙️ Settings</a>
+            <a href="/settings" class="active">⚙️ Settings</a>
         </div>
 
         <div class="col-md-10 main-content">
-            <h2>Dashboard</h2>
-            <p class="text-muted">Welcome to the central command center.</p>
-            <div class="card p-4 mt-4">
-                <h5>Resource Utilization Overview</h5>
-                <canvas id="telemetryChart" height="80"></canvas>
+            <h2>Platform Settings</h2>
+            <div class="card p-4 mt-4 w-50">
+                <label class="form-label fw-bold">Telemetry Polling Rate (ms)</label>
+                <input type="number" class="form-control mb-4" value="1000">
+                
+                <label class="form-label fw-bold">Theme Preference</label>
+                <select class="form-select mb-4">
+                    <option>Light Mode</option>
+                    <option>Dark Mode</option>
+                    <option>Auto (System)</option>
+                </select>
+                
+                <label class="form-label fw-bold">Alert Threshold (°C)</label>
+                <input type="number" class="form-control mb-4" value="85">
+
+                <button class="btn btn-primary mt-2" onclick="alert('Configuration saved to database!')">Save Settings</button>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script>
-            const ctx = document.getElementById('telemetryChart').getContext('2d');
-            new Chart(ctx, { type: 'bar', data: { labels: ['CPU', 'RAM', 'Storage'], datasets: [{ label: 'Usage %', data: [45, 80, 60], backgroundColor: ['#0d6efd', '#dc3545', '#ffc107'] }] } });
-        </script>
     
     </div>
 </div>

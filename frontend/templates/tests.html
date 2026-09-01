@@ -21,27 +21,34 @@
         <!-- Sidebar -->
         <div class="col-md-2 sidebar position-fixed">
             <h4 class="text-center mb-4 text-white mt-3">SmartDevice Lab</h4>
-            <a href="/" class="active">📊 Dashboard</a>
+            <a href="/" class="">📊 Dashboard</a>
             <a href="/devices" class="">📱 Devices</a>
             <a href="/hardware" class="">🔬 Hardware Monitor</a>
-            <a href="/tests" class="">🧪 Tests & Tasks</a>
+            <a href="/tests" class="active">🧪 Tests & Tasks</a>
             <a href="/alerts" class="">⚠️ Alerts</a>
             <a href="/settings" class="">⚙️ Settings</a>
         </div>
 
         <div class="col-md-10 main-content">
-            <h2>Dashboard</h2>
-            <p class="text-muted">Welcome to the central command center.</p>
+            <h2>Automated Hardware Tests</h2>
             <div class="card p-4 mt-4">
-                <h5>Resource Utilization Overview</h5>
-                <canvas id="telemetryChart" height="80"></canvas>
+                <h5>Run Diagnostic Suite</h5>
+                <p>Execute the embedded systems validation scripts on DEV-001.</p>
+                <button class="btn btn-success w-25" onclick="alert('Test suite executed successfully! Passed: 14/14 checks')">Run Full Diagnostics</button>
             </div>
+            
+            <h4 class="mt-5">Tasks Queue</h4>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Thermal Stress Test
+                    <span class="badge bg-primary rounded-pill">Pending</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Battery Drain Simulation
+                    <span class="badge bg-success rounded-pill">Complete</span>
+                </li>
+            </ul>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script>
-            const ctx = document.getElementById('telemetryChart').getContext('2d');
-            new Chart(ctx, { type: 'bar', data: { labels: ['CPU', 'RAM', 'Storage'], datasets: [{ label: 'Usage %', data: [45, 80, 60], backgroundColor: ['#0d6efd', '#dc3545', '#ffc107'] }] } });
-        </script>
     
     </div>
 </div>
